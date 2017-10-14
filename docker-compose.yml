@@ -1,0 +1,12 @@
+nodejs_server:
+  build: ./nodejs_server/
+#  ports:
+#    - "8080:8080"
+
+nginx:
+  build: ./nginx/
+  ports:
+    - "80:80"
+    - "443:443"
+  links:
+    - nodejs_server:nodejs_server
